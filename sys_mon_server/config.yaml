@@ -1,0 +1,13 @@
+# Server Configuration
+host: "0.0.0.0"  # Listen on all interfaces
+port: 8000
+database_url: "sqlite:///./system_monitor.db"
+
+# Security Settings
+allow_origins:
+  - "http://localhost:3000"  # For web frontend
+  - "http://localhost:8000"  # For API docs
+
+# API Settings
+page_size: 100  # Default number of items per page
+max_page_size: 1000

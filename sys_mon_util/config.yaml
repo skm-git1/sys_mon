@@ -1,0 +1,4 @@
+api_endpoint: http://localhost:8000/api/status
+check_interval: 900  # 15 minutes in seconds
+log_level: INFO
+log_file: system_monitor.log

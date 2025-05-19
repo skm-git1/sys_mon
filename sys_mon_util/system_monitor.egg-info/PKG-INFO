@@ -1,0 +1,93 @@
+Metadata-Version: 2.4
+Name: system_monitor
+Version: 0.1.0
+Summary: A cross-platform system monitoring utility
+Home-page: https://github.com/yourusername/system_monitor
+Author: Your Name
+Author-email: your.email@example.com
+Keywords: system monitor security health check
+Classifier: Development Status :: 3 - Alpha
+Classifier: Intended Audience :: System Administrators
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.8
+Classifier: Programming Language :: Python :: 3.9
+Classifier: Programming Language :: Python :: 3.10
+Classifier: Programming Language :: Python :: 3.11
+Requires-Python: >=3.8
+Description-Content-Type: text/markdown
+Requires-Dist: psutil>=5.9.0
+Requires-Dist: requests>=2.31.0
+Requires-Dist: python-daemon>=3.0.1; platform_system != "Windows"
+Requires-Dist: pywin32>=306; platform_system == "Windows"
+Requires-Dist: schedule>=1.2.0
+Requires-Dist: pyyaml>=6.0.1
+Requires-Dist: cryptography>=41.0.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: keywords
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
+
+# System Monitor Utility
+
+A cross-platform system monitoring utility that checks and reports system health status.
+
+## Features
+
+- Disk encryption status monitoring
+- OS update status checking
+- Antivirus presence and status verification
+- System sleep settings compliance checking
+- Background daemon with periodic checks
+- Remote API reporting
+- Cross-platform support (Windows, macOS, Linux)
+
+## Installation
+
+```bash
+pip install .
+```
+
+## Configuration
+
+Create a `config.yaml` file in the installation directory with the following options:
+
+```yaml
+api_endpoint: http://your-api-endpoint/status
+check_interval: 900  # 15 minutes in seconds
+log_level: INFO
+log_file: system_monitor.log
+```
+
+## Usage
+
+To run the monitor:
+
+```bash
+system_monitor
+```
+
+On Windows, you can set up the monitor as a service:
+
+```powershell
+# Create a new service (run as Administrator)
+New-Service -Name "SystemMonitor" -BinaryPathName "python path\to\system_monitor.py" -Description "System Health Monitor" -StartupType Automatic
+```
+
+On Linux/macOS, you can use systemd or launchd to run the monitor as a service.
+
+## Requirements
+
+- Python 3.8 or higher
+- See requirements.txt for package dependencies
+
+## License
+
+MIT License
